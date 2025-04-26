@@ -4,7 +4,7 @@ from datetime import datetime
 import sys
 sys.path.append("/opt/airflow/scripts")
 
-from quality_checker import run_checks
+from automated_quality_report import run_checks
 
 default_args = {
     'start_date': datetime(2024, 4, 24),

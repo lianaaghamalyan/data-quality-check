@@ -3,7 +3,7 @@ import re
 from datetime import datetime
 import os
 from dotenv import load_dotenv
-load_dotenv()
+load_dotenv("credentials_local.env")
 
 
 def run_checks():
@@ -90,7 +90,7 @@ def run_checks():
     today = datetime.now().strftime("%Y_%m_%d")
     out_path = f"reports/quality_check_{today}.txt"
     os.makedirs("reports", exist_ok=True)
-    with open(out_path, "w") as f:
+    with open(out_path, "w", encoding="utf-8") as f:
         f.write("\n".join(report))
 
     print(f"[+] Report generated: {out_path}")
