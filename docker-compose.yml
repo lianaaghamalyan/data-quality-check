@@ -20,7 +20,6 @@ x-airflow-common:
     - ./scripts:/opt/airflow/scripts             # <-- your quality_checker.py here
     - ./data:/opt/airflow/data                   # <-- your CSVs here
     - ./reports:/opt/airflow/reports             # <-- where you save the report
-    - .env:/opt/airflow/.env                     # <-- your environment file
   user: "${AIRFLOW_UID:-50000}:0"
   depends_on:
     - postgres
@@ -53,6 +52,8 @@ services:
   airflow-scheduler:
     <<: *airflow-common
     command: scheduler
+    env_file:
+      - credentials_docker.env
 
   airflow-worker:
     <<: *airflow-common
