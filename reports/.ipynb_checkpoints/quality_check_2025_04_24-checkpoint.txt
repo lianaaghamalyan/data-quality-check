@@ -1,0 +1,45 @@
+DATA QUALITY ISSUES REPORT
+===========================
+
+Generated on: 2025-04-24 20:42:04
+
+
+The following data quality checks were performed:
+
+Customer Table Checks:
+
+  [✓]  Missing values in column 'customer_id': 0
+  [✓]  Missing values in column 'first_name': 0
+  [✓]  Missing values in column 'last_name': 0
+  [✓]  Missing values in column 'email': 0
+  [✓]  Duplicate rows: 0
+  [✓]  Invalid email addresses: 0
+
+Product Table Checks:
+
+  [✓]  Missing values in column 'product_id': 0
+  [✓]  Missing values in column 'product_name': 0
+  [✓]  Missing values in column 'category': 0
+  [✓]  Missing values in column 'price': 0
+  [✓]  Duplicate rows: 0
+  [✓]  Products with missing or 0 price: 0
+  [!]  Product IDs start from 101 (expected 1)
+
+Transaction Table Checks:
+
+  [✓]  Missing values in column 'transaction_id': 0
+  [!]  Missing values in column 'transaction_date': 1
+  [✓]  Missing values in column 'product_id': 0
+  [✓]  Missing values in column 'amount': 0
+  [✓]  Duplicate rows: 0
+  [!]  Negative or zero transaction amounts: 44
+  [✓]  Transactions dated in the future: 0
+  [!]  Missing transaction dates: 1
+  [✓]  Transactions with invalid product_id references: 0
+
+Summary of Issues Found:
+
+  [!]  Product IDs start from 101 (expected 1)
+  [!]  Missing values in column 'transaction_date': 1
+  [!]  Negative or zero transaction amounts: 44
+  [!]  Missing transaction dates: 1
