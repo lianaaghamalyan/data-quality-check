@@ -47,8 +47,8 @@ docker-compose run airflow-init
 docker-compose up -d
 ```
 - Open Airflow UI: http://localhost:8080  
-Username: airflow  
-Password: airflow
+Username: admin
+Password: admin
   
 - Trigger the daily_data_quality_check DAG manually or let it run automatically on schedule.
   
